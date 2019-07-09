@@ -1,6 +1,6 @@
 {{-- \resources\views\users\edit.blade.php --}}
 
-@extends('layouts.app')
+@extends('layouts.nav')
 
 @section('title', '| Edit User')
 

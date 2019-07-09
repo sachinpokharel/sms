@@ -9,14 +9,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SMS') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Scripts -->
     <script>
@@ -31,7 +32,10 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-
+ <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'SMS') }}
+                    </a>
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -40,10 +44,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -72,7 +73,7 @@
                                     <li>
                                      {{-- Laravel-permission blade helper --}}
                                         <a href="/admin"><i class="fa fa-btn fa-unlock"></i>Admin</a>
-                                     
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -91,22 +92,7 @@
             </div>
         </nav>
 
-        @if(Session::has('flash_message'))
-            <div class="container">      
-                <div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
-                </div>
-            </div>
-        @endif 
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">              
-                @include ('errors.list') {{-- Including error file --}}
-            </div>
-        </div>
-
-        @yield('content')
-
-    </div>
+      
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

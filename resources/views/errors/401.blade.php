@@ -1,5 +1,5 @@
 {{-- \resources\views\errors\401.blade.php --}}
-@extends('layouts.app')
+@extends('layouts.nav')
 
 @section('content')
     <div class='col-lg-4 col-lg-offset-4'>
